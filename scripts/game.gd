@@ -12,6 +12,9 @@ func _ready() -> void:
 			if id == checkpoint.checkpoint_id:
 				checkpoint.light()
 	
+	for p in get_tree().get_nodes_in_group("Player"):
+		Global.player = p
+	
 	if Global.cur_checkpoint_id != -1: # Currently has an active checkpoint
 		for checkpoint in checkpoints:
 			if checkpoint.checkpoint_id == Global.cur_checkpoint_id:
