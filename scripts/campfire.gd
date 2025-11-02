@@ -3,6 +3,7 @@ class_name Checkpoint
 
 @onready var triggerzone: Area2D = %triggerzone
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var rich_text_label: RichTextLabel = $RichTextLabel
 
 @export var checkpoint_id: int = -1
 
@@ -17,4 +18,5 @@ func activated_zone() -> void:
 		print("Activated Checkpoint ", checkpoint_id)
 
 func light() -> void:
+	rich_text_label.visible = false
 	animated_sprite_2d.play("active")

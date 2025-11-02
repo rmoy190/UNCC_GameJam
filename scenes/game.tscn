@@ -76,7 +76,7 @@ size = Vector2(48, 16)
 size = Vector2(50, 85)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvuet"]
-size = Vector2(16, 16)
+size = Vector2(16, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir15t"]
 size = Vector2(17, 116)
@@ -98,7 +98,7 @@ tile_map_data = PackedByteArray("AADm/wAAAQAFAAAAAADn/wAAAQAFAAAAAADo/wAAAQAFAAA
 tile_set = SubResource("TileSet_lnu2h")
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(0, -16)
+position = Vector2(1416, -112)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-6, 2)
@@ -380,11 +380,7 @@ shape = SubResource("RectangleShape2D_mtnv0")
 [node name="AppearingWall" parent="OtherObstacles" instance=ExtResource("3_dinhu")]
 position = Vector2(1496, -117)
 
-[node name="Sprite2D" parent="OtherObstacles/AppearingWall" index="0"]
-visible = false
-
 [node name="CollisionShape2D" parent="OtherObstacles/AppearingWall" index="2"]
-position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_kvuet")
 
 [node name="CollisionShape2D" parent="OtherObstacles/AppearingWall/triggerzone" index="0"]
