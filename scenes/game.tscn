@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://4d2a848xr445" path="res://RealAssets-ForGamersOnly/BrickTileSet.png" id="2_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://iawymniexwo6" path="res://Placeholder/brackeys_platformer_assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dn16qo54y55ue" path="res://scenes/spikes.tscn" id="3_gee14"]
-[ext_resource type="PackedScene" uid="uid://c2jp8t2e8r0p5" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://5pc6depeudnk" path="res://scenes/slime.tscn" id="3_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://c38oo72ruavwn" path="res://scenes/coin.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cshl1fneb71pg" path="res://scenes/moving_platform.tscn" id="5_gee14"]
 [ext_resource type="PackedScene" uid="uid://bilv3awgvgfd4" path="res://scenes/campfire.tscn" id="9_0tnpc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
@@ -374,8 +374,8 @@ position = Vector2(55, -6)
 
 [node name="Platforms" type="Node" parent="."]
 
-[node name="Platform" parent="Platforms" instance=ExtResource("3_lnu2h")]
-position = Vector2(57, 244)
+[node name="moving platform" parent="Platforms" instance=ExtResource("5_gee14")]
+position = Vector2(200, 5)
 
 [node name="Enemies" type="Node" parent="."]
 
