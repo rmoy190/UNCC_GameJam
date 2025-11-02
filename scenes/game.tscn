@@ -359,7 +359,7 @@ enabled = false
 tile_set = SubResource("TileSet_gee14")
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(21, -12)
+position = Vector2(24, -16)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-6, 2)
