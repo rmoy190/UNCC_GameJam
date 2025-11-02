@@ -93,7 +93,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Kawaii31" type="Sprite2D" parent="."]
-position = Vector2(277.99997, 293)
+position = Vector2(285, 310)
 scale = Vector2(4.2171874, 4.2171874)
 texture = ExtResource("3_bqqt6")
 
