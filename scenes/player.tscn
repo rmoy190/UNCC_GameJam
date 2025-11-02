@@ -216,9 +216,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
-radius = 4.0
-height = 22.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(5, 21)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
@@ -231,8 +230,8 @@ animation = &"Jump"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
-shape = SubResource("CapsuleShape2D_qhqgy")
+position = Vector2(0.5, 5.5)
+shape = SubResource("RectangleShape2D_qhqgy")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.05
