@@ -1,2 +1,2 @@
-# GAYME
+#UNCC_GameJam
 
