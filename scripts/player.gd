@@ -51,6 +51,7 @@ func _physics_process(delta: float) -> void:
 
 func die() -> void:
 	death = true
+	Global.death_count += 1
 	animated_sprite.play("FuckingExplodes")
 
 func _on_animated_sprite_2d_animation_finished() -> void:

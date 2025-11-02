@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd0wrsruyhuvw"]
+[gd_scene load_steps=9 format=3 uid="uid://c72035cmjmbfj"]
 
-[ext_resource type="Script" uid="uid://cmlhhwdkfrg3y" path="res://scenes/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="FontFile" uid="uid://dy37yimiktju2" path="res://Placeholder/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://5ou3156u8irc" path="res://RealAssets-ForGamersOnly/Kawaii31.png" id="3_bqqt6"]
+[ext_resource type="Script" uid="uid://c8r1jtqsw0eg5" path="res://scripts/game_won.gd" id="1_bb2ko"]
+[ext_resource type="FontFile" uid="uid://dy37yimiktju2" path="res://Placeholder/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_jn3md"]
+[ext_resource type="Texture2D" uid="uid://bsnhflex2vhot" path="res://RealAssets-ForGamersOnly/happy.png" id="3_xh1nx"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vue75"]
 
@@ -18,14 +18,36 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[node name="MainMenu" type="Control"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn3md"]
+atlas = ExtResource("3_xh1nx")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0vlw"]
+atlas = ExtResource("3_xh1nx")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xh1nx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn3md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0vlw")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}]
+
+[node name="GameWon" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_l6cm7")
+script = ExtResource("1_bb2ko")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 self_modulate = Color(0.18325466, 0.18325466, 0.18325466, 1)
@@ -51,9 +73,10 @@ offset_bottom = 245.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
-theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_fonts/font = ExtResource("2_jn3md")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ekxnf")
-text = "Quit"
+text = "Quit
+(Correct Option)"
 
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 1
@@ -62,16 +85,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 273.0
+offset_left = 257.0
 offset_top = 63.0
-offset_right = 485.0
+offset_right = 502.0
 offset_bottom = 143.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
-theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_fonts/font = ExtResource("2_jn3md")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ekxnf")
-text = "Play"
+text = "Replay
+(Why lol)"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -86,16 +110,37 @@ offset_right = 405.0
 offset_bottom = -70.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("2_ekxnf")
-text = "I fucked your wife lmfao"
+theme_override_fonts/normal_font = ExtResource("2_jn3md")
+text = "You did it~!"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Kawaii31" type="Sprite2D" parent="."]
-position = Vector2(277.99997, 293)
-scale = Vector2(4.2171874, 4.2171874)
-texture = ExtResource("3_bqqt6")
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -62.0
+offset_right = 404.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_jn3md")
+text = "And you only died X Times!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Kawaii31" type="AnimatedSprite2D" parent="."]
+position = Vector2(244.00002, 334)
+scale = Vector2(3.3481772, 3.3481772)
+sprite_frames = SubResource("SpriteFrames_xh1nx")
+animation = &"happy"
+autoplay = "happy"
 
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
