@@ -6,12 +6,11 @@ var checkpoints: Array[Checkpoint] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for checkpoint in get_children():
-		if checkpoint.is_in_group("Checkpoint"):
-			checkpoints.append(checkpoint)
-			for id in Global.active_checkpoint_ids:
-				if id == checkpoint.checkpoint_id:
-					checkpoint.light()
+	for checkpoint in get_tree().get_nodes_in_group("Checkpoint"):
+		checkpoints.append(checkpoint)
+		for id in Global.active_checkpoint_ids:
+			if id == checkpoint.checkpoint_id:
+				checkpoint.light()
 	
 	if Global.cur_checkpoint_id != -1: # Currently has an active checkpoint
 		for checkpoint in checkpoints:
