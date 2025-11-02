@@ -14,6 +14,5 @@ func disappear():
 	if not disappeared:
 		collision_shape_2d.set_deferred("disabled", true)
 		visible = false  # this is safe to do immediately
-	else:
-		collision_shape_2d.set_deferred("disabled", false)
-		visible = true
+		AudioManager.play("res://RealAssets-ForGamersOnly/8bit-SFX-Library/Player/landing.wav")
+		disappeared = true

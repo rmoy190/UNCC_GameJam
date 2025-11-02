@@ -15,6 +15,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if Input.is_action_just_pressed("interact"):
+		AudioManager.play("res://RealAssets-ForGamersOnly/8bit-SFX-Library/Win/win-10.wav")
 		get_tree().change_scene_to_file("res://scenes/game_won.tscn")
 
 func in_area(value: bool) -> void:

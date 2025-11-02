@@ -11,4 +11,5 @@ func move_platform():
 	# Safely move only if platform is assigned
 	if not moved  :
 		self.position += move_amount
+		AudioManager.play("res://RealAssets-ForGamersOnly/8bit-SFX-Library/Collide/bonk-6.wav")
 		moved = true 

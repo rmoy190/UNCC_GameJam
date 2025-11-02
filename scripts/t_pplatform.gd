@@ -17,3 +17,4 @@ func move_platform():
 	if platformtp and not moved  :
 		self.position += move_amount
 		moved = true
+		

@@ -12,6 +12,7 @@ func _ready() -> void:
 			if id == checkpoint.checkpoint_id:
 				checkpoint.light()
 	
+	
 	for p in get_tree().get_nodes_in_group("Player"):
 		Global.player = p
 	

@@ -14,7 +14,6 @@ func _ready() -> void:
 func appear():
 	if not appeared:
 		collision_shape_2d.set_deferred("disabled", false)
+		AudioManager.play("res://RealAssets-ForGamersOnly/8bit-SFX-Library/Collide/bonk-6.wav")
 		visible = true  
-	else:
-		collision_shape_2d.set_deferred("disabled", true)
-		visible = false
+		appeared = true

@@ -8,4 +8,5 @@ func _ready() -> void:
 	sprite_2d.visible = false
 
 func appear() -> void:
+	AudioManager.play("res://RealAssets-ForGamersOnly/8bit-SFX-Library/Win/win-4.wav")
 	sprite_2d.visible = true
