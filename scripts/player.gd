@@ -5,6 +5,8 @@ const SPEED = 80.0
 const JUMP_VELOCITY = -280.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var coyote_timer: Timer = $CoyoteTimer
+var coyote_time_activated: bool = false
 
 var death: bool = false
 
@@ -15,9 +17,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+
+	
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -37,10 +38,20 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("Idle")
 		else:
 			animated_sprite.play("Run")
+		if coyote_time_activated:
+			coyote_time_activated = false
+			coyote_timer.stop()
 	else:
 		animated_sprite.play("Jump")
-	
-	
+		if !coyote_time_activated:
+			coyote_timer.start()
+			coyote_time_activated = true
+			
+	if Input.is_action_just_pressed("jump") and ( !coyote_timer.is_stopped() or is_on_floor() ):
+		velocity.y = JUMP_VELOCITY
+		coyote_timer.stop()
+		coyote_time_activated = true
+
 	#Applies movement
 	if direction:
 		velocity.x = direction * SPEED
