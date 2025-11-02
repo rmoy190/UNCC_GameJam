@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://by3fh2jae61j"]
+[gd_scene load_steps=6 format=3 uid="uid://7pnm2wdtx0og"]
 
-[ext_resource type="Script" uid="uid://b14ngn3vhjnig" path="res://scripts/disappearing_floor.gd" id="1_lbjtw"]
-[ext_resource type="Texture2D" uid="uid://4d2a848xr445" path="res://RealAssets-ForGamersOnly/BrickTileSet.png" id="2_nmdip"]
-[ext_resource type="PackedScene" uid="uid://clyuahjpqbmmo" path="res://scenes/triggerzone.tscn" id="3_02a0v"]
+[ext_resource type="Script" uid="uid://4retohvqcwid" path="res://scripts/disappearing_floor_timed.gd" id="1_5x8eo"]
+[ext_resource type="Texture2D" uid="uid://4d2a848xr445" path="res://RealAssets-ForGamersOnly/BrickTileSet.png" id="2_qalij"]
+[ext_resource type="PackedScene" uid="uid://clyuahjpqbmmo" path="res://scenes/triggerzone.tscn" id="3_axany"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02a0v"]
 size = Vector2(48, 16)
@@ -10,24 +10,25 @@ size = Vector2(48, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mtnv0"]
 size = Vector2(50, 82.5)
 
-[node name="disappearing floor" type="StaticBody2D"]
-script = ExtResource("1_lbjtw")
+[node name="disappearing floor timed" type="StaticBody2D"]
+z_index = 1
+script = ExtResource("1_5x8eo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 5)
-texture = ExtResource("2_nmdip")
+texture = ExtResource("2_qalij")
 region_enabled = true
 region_rect = Rect2(16, 32, 16, 16)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(-16, 5)
-texture = ExtResource("2_nmdip")
+texture = ExtResource("2_qalij")
 region_enabled = true
 region_rect = Rect2(16, 32, 16, 16)
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 position = Vector2(16, 5)
-texture = ExtResource("2_nmdip")
+texture = ExtResource("2_qalij")
 region_enabled = true
 region_rect = Rect2(16, 32, 16, 16)
 
@@ -37,8 +38,11 @@ visibility_layer = 2
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_02a0v")
 
-[node name="triggerzone" parent="." instance=ExtResource("3_02a0v")]
+[node name="triggerzone" parent="." instance=ExtResource("3_axany")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="triggerzone"]
 position = Vector2(-1, -28.25)
 shape = SubResource("RectangleShape2D_mtnv0")
+
+[node name="respawn timer" type="Timer" parent="."]
+one_shot = true
