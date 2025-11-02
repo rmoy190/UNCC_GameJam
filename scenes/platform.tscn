@@ -1,18 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2jp8t2e8r0p5"]
 
-[ext_resource type="Texture2D" uid="uid://cufvcdshmvgmq" path="res://assets/sprites/platforms.png" id="1_ba0x2"]
+[ext_resource type="Texture2D" uid="uid://bl1cvndbkgcw0" path="res://RealAssets-ForGamersOnly/ObjectSpriteSheet.png" id="1_ba0x2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8bxr"]
-size = Vector2(32, 9)
+size = Vector2(16, 10)
 
-[node name="AnimatableBody2D" type="AnimatableBody2D"]
+[node name="platform" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ba0x2")
 region_enabled = true
-region_rect = Rect2(16.231102, -0.008213043, 31.283745, 9.231859)
+region_rect = Rect2(16.231102, 0, 15.768898, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_s8bxr")
 one_way_collision = true

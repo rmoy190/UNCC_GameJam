@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://tebtymisgbgh"]
+
+[ext_resource type="Script" uid="uid://cxxt507iu7k3r" path="res://scripts/t_pplatform.gd" id="1_f5teg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2e4u"]
+size = Vector2(15, 135)
+
+[node name="TPplatform" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_f5teg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -57.5)
+shape = SubResource("RectangleShape2D_v2e4u")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
