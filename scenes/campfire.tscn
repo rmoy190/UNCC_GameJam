@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bilv3awgvgfd4"]
+[gd_scene load_steps=8 format=3 uid="uid://bilv3awgvgfd4"]
 
+[ext_resource type="Script" uid="uid://blwx6qxbgyxwv" path="res://scripts/campfire.gd" id="1_yfrnb"]
 [ext_resource type="PackedScene" uid="uid://clyuahjpqbmmo" path="res://scenes/checkpointzone.tscn" id="2_54scn"]
 [ext_resource type="Texture2D" uid="uid://bl1cvndbkgcw0" path="res://RealAssets-ForGamersOnly/ObjectSpriteSheet.png" id="2_yfrnb"]
 
@@ -33,7 +34,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfrnb"]
 size = Vector2(16, 16)
 
-[node name="Campfire" type="Node2D"]
+[node name="Campfire" type="Node2D" groups=["Checkpoint"]]
+z_index = 1
+script = ExtResource("1_yfrnb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fbh7e")
@@ -41,6 +44,8 @@ animation = &"active"
 autoplay = "inactive"
 
 [node name="checkpointzone" parent="." instance=ExtResource("2_54scn")]
+unique_name_in_owner = true
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="checkpointzone"]
 shape = SubResource("RectangleShape2D_yfrnb")

@@ -6,9 +6,11 @@ const JUMP_VELOCITY = -280.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-
+var death: bool = false
 
 func _physics_process(delta: float) -> void:
+	if death: 
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -46,3 +48,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func die() -> void:
+	death = true
+	animated_sprite.play("FuckingExplodes")
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite.animation == "FuckingExplodes":
+		get_tree().reload_current_scene()

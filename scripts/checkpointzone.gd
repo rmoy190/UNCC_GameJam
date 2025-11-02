@@ -1,8 +1,7 @@
 extends Area2D
 
-var is_active = false
+signal activated
 
 func _on_body_entered(body: Node2D) -> void:
-	if is_active == false:
-		is_active = true
-	
+	if body.is_in_group("Player"):
+		activated.emit()
