@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cshl1fneb71pg"]
+[gd_scene load_steps=6 format=3 uid="uid://cshl1fneb71pg"]
 
 [ext_resource type="Texture2D" uid="uid://bl1cvndbkgcw0" path="res://RealAssets-ForGamersOnly/ObjectSpriteSheet.png" id="1_1tdcd"]
-[ext_resource type="PackedScene" uid="uid://tebtymisgbgh" path="res://scenes/t_pplatform.tscn" id="2_mb26n"]
+[ext_resource type="Script" uid="uid://cwbpkniua7oof" path="res://scripts/moving_platform.gd" id="1_mb26n"]
+[ext_resource type="PackedScene" uid="uid://clyuahjpqbmmo" path="res://scenes/triggerzone.tscn" id="2_1tdcd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mb26n"]
 size = Vector2(16, 10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afg43"]
+size = Vector2(20, 153)
+
 [node name="platformtp" type="AnimatableBody2D"]
+script = ExtResource("1_mb26n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mb26n")
@@ -17,5 +22,9 @@ texture = ExtResource("1_1tdcd")
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 10)
 
-[node name="platform detection" parent="." instance=ExtResource("2_mb26n")]
-position = Vector2(-17, 31)
+[node name="triggerzone" parent="." instance=ExtResource("2_1tdcd")]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggerzone"]
+position = Vector2(-18, -8.5)
+shape = SubResource("RectangleShape2D_afg43")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c2o3jetvhy3g"]
+[gd_scene load_steps=16 format=4 uid="uid://c2o3jetvhy3g"]
 
 [ext_resource type="Script" uid="uid://c1ragq72dyaox" path="res://scripts/game.gd" id="1_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://c62amvb2vy1v5" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -8,11 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://5pc6depeudnk" path="res://scenes/slime.tscn" id="3_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://c38oo72ruavwn" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cshl1fneb71pg" path="res://scenes/moving_platform.tscn" id="5_gee14"]
-[ext_resource type="PackedScene" uid="uid://c2jp8t2e8r0p5" path="res://scenes/platform.tscn" id="7_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://bilv3awgvgfd4" path="res://scenes/campfire.tscn" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://by3fh2jae61j" path="res://scenes/disappearing_floor.tscn" id="10_vtaks"]
-[ext_resource type="PackedScene" uid="uid://ci3t8fyactj4l" path="res://scenes/invis_platform.tscn" id="11_kvpfn"]
-[ext_resource type="PackedScene" uid="uid://cr8svwoi5mstk" path="res://scenes/wall.tscn" id="13_kvuet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -383,9 +380,6 @@ position = Vector2(55, -6)
 [node name="moving platform" parent="Platforms" instance=ExtResource("5_gee14")]
 position = Vector2(200, 5)
 
-[node name="platform" parent="Platforms" instance=ExtResource("7_kvpfn")]
-position = Vector2(264, 5)
-
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Slime" parent="Enemies" instance=ExtResource("3_u5sy4")]
@@ -423,12 +417,8 @@ checkpoint_id = 1
 position = Vector2(144, -8)
 checkpoint_id = 2
 
-[node name="invis platform" parent="." instance=ExtResource("11_kvpfn")]
-position = Vector2(280, 5)
-
 [node name="disappearing floor" parent="." instance=ExtResource("10_vtaks")]
-z_index = 1
-position = Vector2(360, 3)
+position = Vector2(344, 5)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("13_kvuet")]
-position = Vector2(85, -21)
+[node name="disappearing floor2" parent="." instance=ExtResource("10_vtaks")]
+position = Vector2(360, 5)
