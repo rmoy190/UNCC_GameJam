@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bilv3awgvgfd4"]
 
 [ext_resource type="Script" uid="uid://blwx6qxbgyxwv" path="res://scripts/campfire.gd" id="1_yfrnb"]
-[ext_resource type="PackedScene" uid="uid://clyuahjpqbmmo" path="res://scenes/checkpointzone.tscn" id="2_54scn"]
+[ext_resource type="PackedScene" uid="uid://clyuahjpqbmmo" path="res://scenes/triggerzone.tscn" id="2_54scn"]
 [ext_resource type="Texture2D" uid="uid://bl1cvndbkgcw0" path="res://RealAssets-ForGamersOnly/ObjectSpriteSheet.png" id="2_yfrnb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_54scn"]
@@ -43,9 +43,9 @@ sprite_frames = SubResource("SpriteFrames_fbh7e")
 animation = &"active"
 autoplay = "inactive"
 
-[node name="checkpointzone" parent="." instance=ExtResource("2_54scn")]
+[node name="triggerzone" parent="." instance=ExtResource("2_54scn")]
 unique_name_in_owner = true
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="checkpointzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggerzone"]
 shape = SubResource("RectangleShape2D_yfrnb")

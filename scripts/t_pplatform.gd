@@ -15,5 +15,5 @@ func _on_body_entered(body: Node2D) -> void:
 func move_platform():
 	# Safely move only if platform is assigned
 	if platformtp and not moved  :
-		platformtp.position += move_amount
+		self.position += move_amount
 		moved = true
