@@ -98,7 +98,7 @@ tile_map_data = PackedByteArray("AADm/wAAAQAFAAAAAADn/wAAAQAFAAAAAADo/wAAAQAFAAA
 tile_set = SubResource("TileSet_lnu2h")
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(-32, -16)
+position = Vector2(2080, 56)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-6, 2)
@@ -421,6 +421,7 @@ z_index = 1
 position = Vector2(2664, 48)
 
 [node name="Door2" type="Sprite2D" parent="OtherObstacles"]
+z_index = 1
 position = Vector2(0, -32)
 texture = ExtResource("3_trtic")
 

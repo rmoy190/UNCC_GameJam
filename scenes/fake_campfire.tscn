@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsg8hgffdh8wu"]
+
+[ext_resource type="Script" uid="uid://cha4uhjaphrlu" path="res://scripts/fake_campfire.gd" id="1_gep1c"]
+[ext_resource type="Texture2D" uid="uid://bl1cvndbkgcw0" path="res://RealAssets-ForGamersOnly/ObjectSpriteSheet.png" id="2_djfnx"]
+[ext_resource type="PackedScene" uid="uid://clyuahjpqbmmo" path="res://scenes/triggerzone.tscn" id="3_mtcld"]
+[ext_resource type="FontFile" uid="uid://dy37yimiktju2" path="res://Placeholder/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_l6ddv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gep1c"]
+atlas = ExtResource("2_djfnx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pk5p"]
+atlas = ExtResource("2_djfnx")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fbh7e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gep1c")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pk5p")
+}],
+"loop": true,
+"name": &"inactive",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfrnb"]
+size = Vector2(16, 16)
+
+[node name="FakeCampfire" type="Node2D"]
+z_index = 1
+script = ExtResource("1_gep1c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fbh7e")
+animation = &"active"
+autoplay = "inactive"
+
+[node name="triggerzone" parent="." instance=ExtResource("3_mtcld")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggerzone"]
+shape = SubResource("RectangleShape2D_yfrnb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = -8.0
+theme_override_fonts/normal_font = ExtResource("4_l6ddv")
+theme_override_font_sizes/normal_font_size = 8
+text = "Checkpoint 
+(Trust)"
+horizontal_alignment = 1
