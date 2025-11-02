@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://c2o3jetvhy3g"]
+[gd_scene load_steps=15 format=4 uid="uid://c2o3jetvhy3g"]
 
+[ext_resource type="Script" uid="uid://c1ragq72dyaox" path="res://scripts/game.gd" id="1_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://c62amvb2vy1v5" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://4d2a848xr445" path="res://RealAssets-ForGamersOnly/BrickTileSet.png" id="2_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://iawymniexwo6" path="res://Placeholder/brackeys_platformer_assets/sprites/world_tileset.png" id="2_yqjtg"]
@@ -343,6 +344,7 @@ texture = ExtResource("2_yqjtg")
 sources/0 = SubResource("TileSetAtlasSource_u5sy4")
 
 [node name="Test world" type="Node2D"]
+script = ExtResource("1_0tnpc")
 
 [node name="TileMap" type="Node" parent="."]
 
@@ -406,6 +408,10 @@ position = Vector2(264, 72)
 [node name="Spikes8" parent="Spikes" instance=ExtResource("3_gee14")]
 position = Vector2(280, 72)
 
-[node name="Campfire" parent="." instance=ExtResource("9_0tnpc")]
-z_index = 1
+[node name="Campfire" parent="." groups=["Checkpoint"] instance=ExtResource("9_0tnpc")]
 position = Vector2(-72, -8)
+checkpoint_id = 1
+
+[node name="Campfire2" parent="." instance=ExtResource("9_0tnpc")]
+position = Vector2(144, -8)
+checkpoint_id = 2
