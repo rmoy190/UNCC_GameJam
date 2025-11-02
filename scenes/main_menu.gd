@@ -12,6 +12,7 @@ func _on_play_button_pressed() -> void:
 	Global.cur_checkpoint_id = -1
 	Global.active_checkpoint_ids.clear()
 	Global.death_count = 0
+	Global.activated_fake_campfire = false
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _on_button_pressed() -> void:
