@@ -660,16 +660,19 @@ checkpoint_id = 1
 
 [node name="Campfire2" parent="Campfires" instance=ExtResource("9_0tnpc")]
 position = Vector2(3696, -104)
-checkpoint_id = 2
+checkpoint_id = 5
 
 [node name="Campfire3" parent="Campfires" instance=ExtResource("9_0tnpc")]
 position = Vector2(2400, -520)
+checkpoint_id = 3
 
 [node name="Campfire4" parent="Campfires" instance=ExtResource("9_0tnpc")]
 position = Vector2(1768, -329)
+checkpoint_id = 2
 
 [node name="Campfire5" parent="Campfires" instance=ExtResource("9_0tnpc")]
 position = Vector2(2200, 344)
+checkpoint_id = 4
 
 [node name="platform" parent="Campfires" instance=ExtResource("6_p57ef")]
 position = Vector2(1664, -133)
