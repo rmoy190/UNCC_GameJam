@@ -120,14 +120,6 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 197.0
-offset_top = 185.0
-offset_right = 429.0
-offset_bottom = 402.0
-
 [node name="Kawaii31" type="AnimatedSprite2D" parent="."]
 position = Vector2(285, 310)
 scale = Vector2(4.2171874, 4.2171874)
@@ -135,6 +127,13 @@ sprite_frames = SubResource("SpriteFrames_8ln24")
 animation = &"Default"
 autoplay = "Default"
 
+[node name="Button" type="Button" parent="Kawaii31"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -20.866985
+offset_top = -29.640606
+offset_right = 30.114857
+offset_bottom = 19.681366
+
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Kawaii31/Button" to="." method="_on_button_pressed"]
