@@ -1,59 +1,180 @@
 # UNCC Game Jam
 
-A team-developed game created during a University of North Carolina at Charlotte game jam.
+A team-developed game created during a game jam at the University of North Carolina at Charlotte.
 
-This project was developed under a limited time constraint as part of a collaborative game-development environment.
+The project was developed under a limited time constraint, requiring the team to rapidly design, prototype, implement, and assemble a playable game.
 
-## Project Overview
+## About the Project
 
-UNCC Game Jam is a collaborative game project developed using Godot.
+UNCC Game Jam is a collaborative game-development project created as part of a University of North Carolina at Charlotte game jam.
 
-The project was created as part of a game jam at UNC Charlotte, requiring the team to rapidly move from an initial concept to a playable game.
+The project was developed from the initial concept through to a playable build within the time available for the event.
 
-## Development Environment
+Like many game-jam projects, development focused on creating a complete and playable core experience while working within significant time and resource constraints.
 
-**Engine:** Godot
+---
 
-**Language:** GDScript
+# Game Overview
 
-**Development Type:** Team project
+A small, totally normal, dungeon escape platformer, with absolutely no rage inducing mechanics whatsoever. Jokes aside this is a rage platformer that is built to be unfair to the player. Do your best to make it to the end and die many times trying!
 
-**Project Format:** Game Jam
+# Development Process
 
-## Working Under a Game Jam Deadline
+The project was developed using a rapid iteration process typical of game jams.
 
-Game jams require developers to make decisions quickly while working with incomplete information and a fixed deadline.
+```text
+Idea
+  |
+  v
+Game Design
+  |
+  v
+Prototype
+  |
+  v
+Core Gameplay
+  |
+  v
+Content & Assets
+  |
+  v
+Testing
+  |
+  v
+Playable Build
+```
 
-This project provided experience with:
+The limited development window meant that features had to be evaluated based on how much they contributed to the core gameplay experience.
+
+This required the team to continuously balance:
+
+* Feature scope
+* Development time
+* Technical complexity
+* Gameplay value
+* Art and asset requirements
+* Testing and debugging
+
+---
+
+# Game Jam Constraints
+
+Game jams introduce constraints that are different from those found in longer personal projects.
+
+Development time is limited, meaning that a feature that might normally take several days or weeks may need to be implemented in a much shorter period.
+
+This project required the team to make decisions about:
+
+* Which features were essential
+* Which features could be simplified
+* Which features could be removed
+* Which systems needed reusable implementations
+* Where development time should be spent
+* What could realistically be completed before the deadline
+
+The result is a project focused on demonstrating a complete gameplay concept rather than maximizing the number of features.
+
+---
+
+# Team Development
+
+UNCC Game Jam was developed collaboratively.
+
+Working on a shared game project introduced several challenges that are less prominent in a solo project.
+
+Team members needed to coordinate:
+
+* Gameplay programming
+* Scene development
+* Art
+* Assets
+* Game design
+* Feature priorities
+* Testing
+* Bug fixing
+* Integration
+
+Because different parts of the game were developed simultaneously, changes to one part of the project could affect other systems.
+
+This made communication and integration an important part of the development process.
+
+---
+
+# Technical Development
+
+The game was developed using the Godot game engine.
+
+The project is organized into separate areas for:
+
+```text
+assets/
+    Game assets and resources
+
+scenes/
+    Godot scenes
+
+scripts/
+    Gameplay and supporting scripts
+
+Placeholder/
+    Temporary development assets
+
+RealAssets-ForGamersOnly/
+    Final / replacement game assets
+```
+
+This structure separates the project's gameplay logic, scenes, and content and makes the repository easier to navigate.
+
+---
+
+# Programming
+
+Gameplay functionality is implemented using GDScript.
+
+The project uses Godot's scene and scripting systems to connect gameplay objects with the underlying game logic.
+
+The development process involved working with:
+
+* GDScript
+* Godot scenes
+* Nodes
+* Signals
+* Input handling
+* Gameplay state
+* Collision and interaction systems
+* Asset integration
+* Scene organization
+
+The exact implementation of each system can be found in the `scripts/` directory.
+
+---
+
+# What This Project Demonstrates
+
+This project provides experience with several aspects of practical game development.
+
+### Game Development
 
 * Rapid prototyping
-* Team communication
-* Dividing development tasks
-* Integrating code written by different developers
-* Debugging under time constraints
-* Prioritizing gameplay over unnecessary scope
-* Working toward a fixed submission deadline
+* Gameplay programming
+* Scene-based development
+* Game design iteration
+* Asset integration
+* Debugging
+* Playtesting
 
-## Technical Challenges
+### Team Development
 
-### Rapid Prototyping
+* Working on a shared project
+* Dividing development responsibilities
+* Integrating different systems
+* Communicating technical requirements
+* Working toward a shared deadline
 
-The team needed to move from an initial concept to a functional game within the available development window.
+### Software Development
 
-This required prioritizing the core gameplay loop and avoiding systems that did not directly contribute to the final playable experience.
-
-### System Integration
-
-Because this was a team project, individual systems needed to work together with code and assets created by other team members.
-
-This provided practical experience with:
-
-* Shared project structure
-* Git-based development
-* Scene organization
-* Script dependencies
-* Debugging integration problems
-
-## Credits
-
-This game was developed collaboratively by the UNCC Game Jam team.
+* Git version control
+* Code organization
+* Debugging
+* Iterative development
+* Managing changing requirements
