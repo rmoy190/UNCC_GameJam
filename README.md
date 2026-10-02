@@ -4,6 +4,16 @@ A team-developed game created during a game jam at the University of North Carol
 
 The project was developed under a limited time constraint, requiring the team to rapidly design, prototype, implement, and assemble a playable game.
 
+---
+
+# Game Overview
+
+A small, totally normal, dungeon escape platformer, with absolutely no rage inducing mechanics whatsoever. Jokes aside this is a rage platformer that is built to be unfair to the player. Do your best to make it to the end and die many times trying!
+
+<img width="480" height="270" alt="UtKbr7" src="https://github.com/user-attachments/assets/f18947c5-7157-4937-b888-b3a576f2e3b5" />
+<img width="480" height="270" alt="JCYeR1" src="https://github.com/user-attachments/assets/eb8a873a-6162-4eb0-8e07-6fe5a133aadc" />
+<img width="480" height="270" alt="Ua29gt" src="https://github.com/user-attachments/assets/f39fe3ce-f986-446c-8dbb-bd3cc9fdf2ea" />
+
 ## About the Project
 
 UNCC Game Jam is a collaborative game-development project created as part of a University of North Carolina at Charlotte game jam.
@@ -11,12 +21,6 @@ UNCC Game Jam is a collaborative game-development project created as part of a U
 The project was developed from the initial concept through to a playable build within the time available for the event.
 
 Like many game-jam projects, development focused on creating a complete and playable core experience while working within significant time and resource constraints.
-
----
-
-# Game Overview
-
-A small, totally normal, dungeon escape platformer, with absolutely no rage inducing mechanics whatsoever. Jokes aside this is a rage platformer that is built to be unfair to the player. Do your best to make it to the end and die many times trying!
 
 # Development Process
 
